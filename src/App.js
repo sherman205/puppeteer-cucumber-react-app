@@ -26,13 +26,18 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({ result: 'Form submitted!' });
+    if (this.state.name && this.state.email) {
+      this.setState({ result: 'Form submitted!' });
+    }
+    else {
+      this.setState({ result: 'Please fill out the fields' });
+    }
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit} >
+        <form className="signup-form" onSubmit={this.handleSubmit} >
           <div className="form-group">
             <label id="nameInput">Name</label>
             <input type="text" name="name" value={this.state.name} onChange={this.handleChange} className="form-control" id="nameInput" placeholder="Name" />
