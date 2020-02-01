@@ -6,7 +6,8 @@ class App extends Component {
     super(props);
     this.state = {
       name: '',
-      email:''
+      email: '',
+      result: ''
     };
 
     this.handleChange = this.handleInputChange.bind(this);
@@ -21,12 +22,11 @@ class App extends Component {
     this.setState({
       [name]: value
     });
-    console.log('Change detected. State updated' + name + ' = ' + value);
   }
 
   handleSubmit(event) {
-    alert('A form was submitted: ' + this.state.name + ' // ' + this.state.email);
     event.preventDefault();
+    this.setState({ result: 'Form submitted!' });
   }
 
   render() {
@@ -43,6 +43,9 @@ class App extends Component {
           </div>
           <input type="submit" value="Submit" className="btn btn-primary" />
         </form>
+        <div className="result">
+          {this.state.result}
+        </div>
       </div>
     )
   }
