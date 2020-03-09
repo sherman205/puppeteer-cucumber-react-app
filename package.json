@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "cucumber": "^6.0.5",
+    "cucumber-html-reporter": "^5.1.0",
     "puppeteer": "^2.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -13,8 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:puppeteer": "cucumber-js -f json:cucumber.json",
+    "test:puppeteer": "cucumber-js -f json:cucumber.json; node generate-cucumber-html.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
