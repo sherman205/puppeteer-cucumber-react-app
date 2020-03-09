@@ -11,6 +11,12 @@ Together, these two Node.js modules provide powerful testing capability of a bro
 
 ## Running locally
 
+Start the development server -- it must be run on port 3000:
+```
+npm start
 ```
 
+To run the cucumber tests and generate cucumber.json and cucumber.html reports:
+```
+npm run test:puppeteer
 ```
