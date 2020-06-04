@@ -1,10 +1,9 @@
 const scope = require('./scope');
 const expect = require('expect');
 
-const openSignupPage = async() => {
-  scope.browser = await scope.driver.launch({ headless: false });
-  scope.context.currentPage = await scope.browser.newPage();
-  return await scope.context.currentPage.goto(scope.host);
+const checkHome = async() => {
+  let checkUrl = await scope.context.currentPage.evaluate(() => location.href);
+  expect(checkUrl).toMatch(scope.host);
 };
 
 const fillForm = async() => {
@@ -30,7 +29,7 @@ const checkFormSubmission = async() => {
 };
 
 module.exports = {
-  openSignupPage,
+  checkHome,
   fillForm,
   checkFormSubmission
 };

@@ -1,12 +1,12 @@
 const { Given, When, Then } = require('cucumber');
 const {
-  openSignupPage,
+  checkHome,
   fillForm,
   checkFormSubmission
 } = require('../support/basic');
 
 
-Given('the user is on the signup form page', openSignupPage);
+Given('the user is on the signup form page', checkHome);
 
 When('the user correctly fills out the form', fillForm);
 

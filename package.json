@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test:puppeteer": "cucumber-js -f json:cucumber.json; node generate-cucumber-html.js",
+    "test:cucumber": "cucumber-js -f json:cucumber.json; node generate-cucumber-html.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

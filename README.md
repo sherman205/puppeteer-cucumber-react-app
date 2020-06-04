@@ -18,5 +18,22 @@ npm start
 
 To run the cucumber tests and generate cucumber.json and cucumber.html reports:
 ```
-npm run test:puppeteer
+npm run test:cucumber
 ```
+
+## Running with docker-compose
+
+The react app is dockerized, using the Dockerfile, and the cucumber tests are run in a separate docker container, outlined in Dockerfile.test.
+
+To run the cucumber tests with Docker, use the `docker-compose-tests.yml` setup:
+
+```
+docker-compose -f docker-compose-tests.yml up --build
+```
+
+## Artifacts
+
+Regardless of whether you run the cucumber tests locally or through Docker, two artifacts are generated: 
+
+1. cucumber.json -- easy to parse
+2. cucumber.html -- view results in a nice visual, user-friendly format

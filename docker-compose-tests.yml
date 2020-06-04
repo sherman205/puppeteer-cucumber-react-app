@@ -1,0 +1,25 @@
+version: '2.1'
+services:
+  react-app-tests:
+    environment:
+        - SERVICE_ENDPOINT=http://react-app:3000
+    volumes:
+      - ".:/cucumber/test-output"
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    depends_on:
+      react-app:
+        condition: service_healthy
+
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:3000/"]
+      interval: 2s
+      timeout: 10s
+      retries: 10
